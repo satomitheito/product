@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopMart Predictor Tool - Satomi Ito</title>
+    <link rel="stylesheet" href="popmart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">← Back to Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="main-title">Building a Predictor Tool For POPMART's POP NOW Function</span>
+                    </h1>
+                        <div class="project-meta scroll-reveal-stagger">
+                        <div class="meta-item">
+                            <span class="meta-label">Duration:</span>
+                            <span class="duration-pill">2 months</span>
+                        </div>
+                        <div class="meta-item">
+                            <a href="https://satomi.framer.website/popnow-project" class="product-page-pill" target="_blank">View Product Page</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container floating-element">
+                        <div class="placeholder-image">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                                        <polyline points="21,15 16,10 5,21"/>
+                                    </svg>
+                                </div>
+                                <p class="placeholder-text">PopMart POP NOW<br>Predictor Tool</p>
+                            </div>
+                        </div>
+                        <!-- Uncomment and add your hero image path when ready
+                        <img src="popmart-images/hero-image.jpg" alt="PopMart POP NOW Predictor Tool" class="project-image">
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Problem?</h2>
+                </div>
+                
+                <div class="problem-content">
+                    <div class="problem-statement scroll-reveal">
+                        <h3 class="problem-headline">POP NOW users want to be confident in which blind box to pick.</h3>
+                    </div>
+                    
+                    <div class="problem-details scroll-reveal">
+                        <div class="problem-description">
+                            <p>POP NOW is a function from POP MART that allows users to open blind boxes virtually. While POP NOW allows users to know a set number of which specific items are not found in a box, users don't have the time to calculate the likelihood of their choice item appearing in a blind box. Users only find out which item they got after purchase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Existing Page Section -->
+    <section id="existing-page" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Existing page</h2>
+                </div>
+                
+                <div class="existing-page-content">
+                    <!-- Main Image and Text Layout -->
+                    <div class="existing-page-main scroll-reveal">
+                        <div class="existing-image-container">
+                            <img src="popmart-images/existpage2.png" alt="POP NOW Interface" class="existing-image">
+                            <!-- Visual indicators -->
+                            <div class="visual-indicators">
+                                <div class="indicator indicator-1">
+                                    <div class="red-circle"></div>
+                                </div>
+                                <div class="indicator indicator-2">
+                                    <div class="red-circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="existing-text-content">
+                            <div class="hover-instruction">
+                                <span class="hover-text">Hover over the points below to see highlights</span>
+                            </div>
+                            <div class="existing-point hover-target">
+                                <div class="point-indicator">1</div>
+                                <p>Users are only given 5 minutes to reserve a blind box.</p>
+                            </div>
+                            <div class="existing-point hover-target">
+                                <div class="point-indicator">2</div>
+                                <p>Each blind box will give hints to which items are not in a specific box.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Problem Statement -->
+                    <div class="existing-problem scroll-reveal">
+                        <p>With the limited time, users often find themselves spending more to get their choice item.</p>
+                    </div>
+                    
+                    <!-- Additional Review Images -->
+                    <div class="review-images scroll-reveal">
+                        <div class="review-image-container">
+                            <img src="popmart-images/review1.png" alt="Review Image 1" class="review-image">
+                        </div>
+                        
+                        <div class="review-image-container">
+                            <img src="popmart-images/review2.png" alt="Review Image 2" class="review-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Goals</h2>
+                </div>
+                
+                <div class="goals-content">
+                    <div class="goals-list">
+                        <div class="goal-item scroll-reveal">
+                            <div class="goal-text">
+                                <h3>To create a quick and easy tool for users to pick blind boxes</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="goal-item scroll-reveal">
+                            <div class="goal-text">
+                                <h3>Keep track of the user inputs for each blind boxes in an organized manner.</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="goal-item scroll-reveal">
+                            <div class="goal-text">
+                                <h3>Create visuals that dynamically updates based on user input.</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="goal-item scroll-reveal">
+                            <div class="goal-text">
+                                <h3>Let users easily customize the blind boxes by removing specified items.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rethinking the Flow Section -->
+    <section id="rethinking-flow" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Rethinking the flow</h2>
+                </div>
+                
+                <div class="rethinking-content">
+                    <div class="rethinking-description scroll-reveal">
+                        <p>This new tool should not stray far from POP NOW's flow. As mentioned on their official website, their flow is three simple steps.</p>
+                    </div>
+                    
+                    <div class="flow-comparison">
+                        <div class="flow-item scroll-reveal">
+                            <div class="flow-label">
+                                <h3>POP NOW's flow</h3>
+                            </div>
+                            <div class="flow-image-container">
+                                <img src="popmart-images/orig_flow.png" alt="POP NOW's Flow" class="flow-image">
+                            </div>
+                        </div>
+                        
+                        <div class="flow-transition-text scroll-reveal">
+                            <p>The predictor tool will also be a three step flow that is similar to the official.</p>
+                        </div>
+                        
+                        <div class="flow-item scroll-reveal">
+                            <div class="flow-label">
+                                <h3>Predictor Tool Flow</h3>
+                            </div>
+                            <div class="flow-image-container">
+                                <img src="popmart-images/new_flow.png" alt="Predictor Tool Flow" class="flow-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Solution</h2>
+                </div>
+                
+                <div class="solution-content">
+                    <div class="solution-description scroll-reveal">
+                        <h3>A platform that generates predictions based on user input, guiding them on which blind box to pick.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Page and How To Use Page Section -->
+    <section id="home-how-to-use" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Home Page and How To Use Page</h2>
+                </div>
+                
+                <div class="home-how-to-use-content">
+                    <!-- Image Showcase with Text -->
+                    <div class="home-page-showcase scroll-reveal">
+                        <div class="showcase-container">
+                            <div class="text-boxes-left">
+                                <div class="text-box-1 scroll-reveal">
+                                    <p>The tabs page is kept simple to avoid confusion.</p>
+                                </div>
+                                
+                                <div class="text-box-2 scroll-reveal">
+                                    <p>Guides users to the product page</p>
+                                </div>
+                            </div>
+                            
+                            <div class="showcase-images">
+                                <div class="main-image-container">
+                                    <div class="home-page-placeholder">
+                                        <div class="placeholder-content">
+                                            <div class="placeholder-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                                    <polyline points="9,22 9,12 15,12 15,22"/>
+                                                </svg>
+                                            </div>
+                                            <p class="placeholder-text">Home Page<br>Interface</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="overlapping-images">
+                                    <div class="overlap-image-1">
+                                        <div class="home-page-placeholder small">
+                                            <div class="placeholder-content">
+                                                <div class="placeholder-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                                                        <polyline points="21,15 16,10 5,21"/>
+                                                    </svg>
+                                                </div>
+                                                <p class="placeholder-text">Home Page<br>Detail</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="overlap-image-2">
+                                        <div class="how-to-use-placeholder">
+                                            <div class="placeholder-content">
+                                                <div class="placeholder-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                        <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/>
+                                                        <polyline points="9,11 12,14 15,11"/>
+                                                        <line x1="12" y1="10" x2="12" y2="3"/>
+                                                    </svg>
+                                                </div>
+                                                <p class="placeholder-text">How To Use<br>Instructions</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="how-to-use-explanation scroll-reveal">
+                        <div class="explanation-text">
+                            <h3>How To Use tab are the instructions. I kept it simple and straight to the point to avoid confusion, following the "Pick A Box" and "Input Hints" pipeline.</h3>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Page Section -->
+    <section id="product-page" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Product Page</h2>
+                </div>
+                
+                <div class="product-page-content">
+                    
+                    <div class="product-page-showcase scroll-reveal">
+                        <div class="product-showcase-container">
+                            <div class="product-image-left">
+                                <div class="product-interface-container">
+                                    <div class="product-interface-placeholder">
+                                        <div class="placeholder-content">
+                                            <div class="placeholder-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                    <path d="M9 9h6v6H9z"/>
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                                    <path d="M21 7v2"/>
+                                                    <path d="M3 7v2"/>
+                                                </svg>
+                                            </div>
+                                            <p class="placeholder-text">Product Series<br>Interface</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Search and scroll indicators -->
+                                    <div class="product-features">
+                                        <div class="feature-indicator search-indicator">
+                                            <div class="indicator-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="11" cy="11" r="8"/>
+                                                    <path d="m21 21-4.35-4.35"/>
+                                                </svg>
+                                            </div>
+                                            <span class="indicator-text">Search</span>
+                                        </div>
+                                        
+                                        <div class="feature-indicator scroll-indicator">
+                                            <div class="indicator-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M12 5v14"/>
+                                                    <path d="M19 12l-7 7-7-7"/>
+                                                </svg>
+                                            </div>
+                                            <span class="indicator-text">Scroll</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-text-boxes-right">
+                                <div class="product-text-box-1 scroll-reveal">
+                                    <p>Lists all the series that are active.</p>
+                                </div>
+                                
+                                <div class="product-text-box-2 scroll-reveal">
+                                    <p>Users can scroll and search for choice series.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pick A Box and Input Hints Section -->
+    <section id="pick-box-input-hints" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">Pick A Box and Input Hints</h2>
+                </div>
+                
+                <div class="pick-box-content">
+                    <!-- Main Interface Image with Circular Highlights -->
+                    <div class="pick-box-main-interface scroll-reveal">
+                        <div class="interface-container">
+                            <div class="interface-image-container">
+                                <div class="interface-placeholder">
+                                    <div class="placeholder-content">
+                                        <div class="placeholder-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                <path d="M9 9h6v6H9z"/>
+                                                <path d="M3 7h18"/>
+                                                <path d="M7 3v4"/>
+                                                <path d="M17 3v4"/>
+                                            </svg>
+                                        </div>
+                                        <p class="placeholder-text">Pick A Box<br>Interface</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Visual indicators with circles -->
+                                <div class="pick-box-indicators">
+                                    <div class="indicator-circle indicator-circle-1">
+                                        <div class="circle-highlight"></div>
+                                    </div>
+                                    <div class="indicator-circle indicator-circle-2">
+                                        <div class="circle-highlight"></div>
+                                    </div>
+                                    <div class="indicator-circle indicator-circle-3">
+                                        <div class="circle-highlight"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Text explanations with arrows -->
+                            <div class="pick-box-explanations">
+                                <div class="explanation-item explanation-1 scroll-reveal">
+                                    <div class="explanation-arrow">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                                        </svg>
+                                    </div>
+                                    <p>Users can select items that are not in the blind box to mark them as NOT ME.</p>
+                                </div>
+                        
+                                
+                                <div class="explanation-item explanation-3 scroll-reveal">
+                                    <div class="explanation-arrow">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                                        </svg>
+                                    </div>
+                                    <p>Users can select different boxes to input hints.</p>
+                                </div>
+                                <div class="explanation-item explanation-2 scroll-reveal">
+                                    <div class="explanation-arrow">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                                        </svg>
+                                    </div>
+                                    <p>Users can check out a summary of all their inputs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Chart Section -->
+                    <div class="interactive-charts-section scroll-reveal">
+                        <div class="charts-container">
+                            <!-- Chart 1 - Empty Box Status -->
+                            <div class="chart-item">
+                                <div class="chart-header">
+                                    <h3>Box Status Overview</h3>
+                                    <div class="chart-toggle-buttons">
+                                        <button class="toggle-btn active" data-chart="empty" data-state="not-filled">Not Filled</button>
+                                        <button class="toggle-btn" data-chart="empty" data-state="filled">Filled</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="chart-container">
+                                    <div class="chart-placeholder active" id="empty-chart-not-filled">
+                                        <div class="placeholder-content">
+                                            <div class="placeholder-icon">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                    <path d="M8 12h8"/>
+                                                    <path d="M12 8v8"/>
+                                                </svg>
+                                            </div>
+                                            <p class="placeholder-text">Empty Box<br>Status Chart</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="chart-placeholder" id="empty-chart-filled">
+                                        <div class="placeholder-content">
+                                            <div class="placeholder-icon">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                    <path d="M9 12l2 2 4-4" stroke="white" stroke-width="3" fill="none"/>
+                                                    <circle cx="7" cy="7" r="1.5" fill="white"/>
+                                                    <circle cx="17" cy="7" r="1.5" fill="white"/>
+                                                    <circle cx="7" cy="17" r="1.5" fill="white"/>
+                                                    <circle cx="17" cy="17" r="1.5" fill="white"/>
+                                                </svg>
+                                            </div>
+                                            <p class="placeholder-text">Filled Box<br>Status Chart</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chart-description">
+                                    <p>This is what an empty box status will look like. Sometimes not all boxes in the series will be available to the user which means some boxes will remain empty.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="popmart.js"></script>
+</body>
+</html> 

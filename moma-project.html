@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoMA Project - Satomi Ito</title>
+    <link rel="stylesheet" href="moma-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crafty+Girls&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">← Back to Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="main-title">Reimagining MoMA's Digital Map For Better Wayfinding</span>
+                    </h1>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Duration:</span>
+                            <span class="meta-value">4 weeks</span>
+                        </div>
+                        <a href="https://medium.com/@si408/wheres-the-art-solving-moma-s-visitor-navigation-problem-fa2f4e422dd8" class="hero-medium-button" target="_blank">Medium Article</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="moma-images/MoMA_Overview_Redesign.jpg" alt="MoMA Digital Map Redesign" class="project-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="original-dashboard scroll-reveal-scale">
+                    <img src="moma-images/before.png" alt="Original MoMA Digital Map Dashboard" class="dashboard-image">
+                    <p class="image-caption">Original dashboard of the MoMA digital map</p>
+                </div>
+
+                <div class="problem-text-content scroll-reveal">
+                    <h2 class="section-title">Problem</h2>
+                    
+                    <div class="problem-statement">
+                        <p class="problem-text">Visitors at MoMA face difficulties finding artworks due to unclear and overwhelming digital navigation.</p>
+                    </div>
+                </div>
+
+                <div class="problem-images scroll-reveal-right">
+                    <div class="user-review">
+                        <img src="moma-images/review.jpg" alt="User Review Screenshot" class="review-image">
+                    </div>
+                </div>
+
+                <h3 class="insights-title scroll-reveal">User Research Insights</h3>
+                <div class="problem-insights scroll-stagger-parent">
+                    <div class="insight-card scroll-stagger delay-1">
+                        <h2>Navigation Issues</h2>
+                        <p>Users get lost navigating through multiple floors without clear guidance</p>
+                    </div>
+                    <div class="insight-card scroll-stagger delay-2">
+                        <h2>No Search Function</h2>
+                        <p>Visitors can't easily find specific artworks they want to see</p>
+                    </div>
+                    <div class="insight-card scroll-stagger delay-3">
+                        <h2>Lack of Personalization</h2>
+                        <p>The experience doesn't adapt to individual user preferences or interests</p>
+                    </div>
+                </div>
+
+                <h3 class="opportunities-title scroll-reveal">Opportunities Identified</h3>
+                <div class="opportunities-list scroll-stagger-parent">
+                    <div class="opportunity-item scroll-stagger delay-1">
+                        <div class="opportunity-number">#1</div>
+                        <p>Allow users to <strong>bookmark pieces/events</strong> to personalize content.</p>
+                    </div>
+                    <div class="opportunity-item scroll-stagger delay-2">
+                        <div class="opportunity-number">#2</div>
+                        <p>Improve artwork discoverability by implementing a <strong>search system</strong>.</p>
+                    </div>
+                    <div class="opportunity-item scroll-stagger delay-3">
+                        <div class="opportunity-number">#3</div>
+                        <p>Add <strong>markers to the digital map</strong> so it can be helpful for users to find those pieces.</p>
+                    </div>
+                    <div class="opportunity-item scroll-stagger delay-4">
+                        <div class="opportunity-number">#4</div>
+                        <p>Allow users to view <strong>saved artwork in their customized tab</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Users Section -->
+    <section id="target-users" class="target-users-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal">Target Users</h2>
+                
+                <div class="target-users-intro scroll-reveal-left">
+                    <p class="intro-text">The users range from seasoned art enthusiasts to first-time museum tourists.</p>
+                    <p class="intro-text">I revised our approach to focus on casual visitors, rather than either extremity. The original navigation tools assumed all users had the same level of interest and familiarity with the art. This overlooked the needs of newcomers, who felt overwhelmed, and underwhelmed the experts, who sought deeper engagement. By designing for the middle ground, I created a system that is intuitive for beginners yet flexible enough for experts.</p>
+                </div>
+
+                <div class="interactive-spectrum">
+                    <div class="spectrum-container">
+                        <div class="spectrum-line">
+                            <div class="spectrum-point expert-point" data-tooltip="Frequent museum visitors with deep art knowledge">
+                                <div class="point-circle expert-circle"></div>
+                                <span class="point-label">Art Experts</span>
+                            </div>
+                            <div class="spectrum-point casual-point" data-tooltip="Visitors seeking engaging art experiences">
+                                <div class="point-circle casual-circle"></div>
+                                <span class="point-label">Casual Visitors</span>
+                            </div>
+                            <div class="spectrum-point tourist-point" data-tooltip="First-time visitors unfamiliar with museums">
+                                <div class="point-circle tourist-circle"></div>
+                                <span class="point-label">First-time Tourists</span>
+                            </div>
+                        </div>
+                        <div class="spectrum-labels">
+                            <span class="spectrum-label left">High Museum Experience</span>
+                            <span class="spectrum-label center">Target Focus</span>
+                            <span class="spectrum-label right">Low Museum Experience</span>
+                        </div>
+                        <div class="spectrum-descriptions">
+                            <span class="description-label left">Visit frequently</span>
+                            <span class="description-label center">Visit occasionally</span>
+                            <span class="description-label right">Rarely visit</span>
+                        </div>
+                    </div>
+
+                    <!-- Tooltip -->
+                    <div class="tooltip" id="tooltip"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solution-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="solution-title scroll-reveal">Solution</h2>
+                
+                <div class="solution-video-container scroll-reveal-scale">
+                    <video class="solution-video" muted loop playsinline>
+                        <source src="moma-images/moma_prototype_overview.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Page Section -->
+    <section id="explore-page" class="explore-page-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal">Explore Page</h2>
+                
+                <div class="feature-description scroll-reveal-left">
+                    <p class="feature-intro">The explore page showcases all the pieces/events that are currently available based on specific floor the user looks at. I added a saved tab, a search button, and a bookmark icon to enhance personalization.</p>
+                </div>
+
+                <div class="explore-card scroll-reveal-scale">
+                    <div class="card-image">
+                        <div class="image-container-interactive">
+                            <img src="moma-images/explore.jpg" alt="MoMA Explore Page Interface" class="explore-screenshot">
+                            <!-- Interactive overlays for hover effects -->
+                            <div class="highlight-overlay" id="bookmark-highlight"></div>
+                            <div class="highlight-overlay" id="search-highlight"></div>
+                            <div class="highlight-overlay" id="saved-tab-highlight"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="hover-hint">Hover over features to see their interface positions</p>
+                        <div class="feature-item scroll-stagger delay-1" data-highlight="saved-tab-highlight">
+                            <div class="feature-icon">💾</div>
+                            <p>The Saved tab is added to show the pieces the user bookmarked. The line under the tab indicate what that the user is currently viewing.</p>
+                        </div>
+                        <div class="feature-item scroll-stagger delay-2" data-highlight="search-highlight">
+                            <div class="feature-icon">🔍</div>
+                            <p>Users can search for pieces they are interested in.</p>
+                        </div>
+                        <div class="feature-item scroll-stagger delay-3" data-highlight="bookmark-highlight">
+                            <div class="feature-icon">📌</div>
+                            <p>User can bookmark pieces of their interest and can view them in the Saved tab.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-card scroll-reveal-right">
+                    <div class="card-image">
+                        <img src="moma-images/search.png" alt="MoMA Search Functionality" class="search-screenshot">
+                    </div>
+                    
+                    <div class="card-content">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔍</div>
+                            <p>The search system allows users to search for piece of interest. However, it would be interesting if the search system can also search by tags.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saved Page Section -->
+    <section id="saved-page" class="saved-page-section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title scroll-reveal">Saved Page</h2>
+                
+                <div class="feature-description scroll-reveal-right">
+                    <p class="feature-intro">The saved page showcases all the items the user has bookmarked, which can be indicated by the colored bookmark icon. Once an item is bookmarked, a bookmark icon will also appear on the map indicating where the item is on the floor.</p>
+                </div>
+
+                <div class="saved-card scroll-reveal-scale">
+                    <div class="card-image">
+                        <div class="image-container-saved">
+                            <img src="moma-images/saved.jpg" alt="MoMA Saved Page Interface" class="saved-screenshot">
+                            <!-- Interactive overlays for hover effects -->
+                            <div class="highlight-overlay" id="saved-search-highlight"></div>
+                            <div class="highlight-overlay" id="saved-locate-highlight"></div>
+                            <div class="highlight-overlay" id="saved-bookmark-highlight"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="hover-hint">Hover over features to see their interface positions</p>
+                        <div class="feature-item scroll-stagger delay-1" data-highlight="saved-search-highlight">
+                            <div class="feature-icon">🔍</div>
+                            <p>Users can search for pieces they saved.</p>
+                        </div>
+                        <div class="feature-item scroll-stagger delay-2" data-highlight="saved-bookmark-highlight">
+                            <div class="feature-icon">💾</div>
+                            <p>Once a user bookmarks an item, the icon gets filled to indicated that it has been saved.</p>
+                        </div>
+                        <div class="feature-item scroll-stagger delay-3" data-highlight="saved-locate-highlight">
+                            <div class="feature-icon">📍</div>
+                            <p>Users can easily locate the piece.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medium Article Section -->
+    <section id="medium-article" class="medium-article-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="medium-content scroll-reveal-scale">
+                    <h2 class="medium-title">Check out the Medium article</h2>
+                    <div class="medium-button-container">
+                        <a href="https://medium.com/@si408/wheres-the-art-solving-moma-s-visitor-navigation-problem-fa2f4e422dd8" class="medium-button" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="connect-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="connect-content">
+                    <h2 class="connect-title">CONNECT WITH ME</h2>
+                    <div class="contact-info">
+                        <a href="mailto:si408@georgetown.edu" class="email-link">si408@georgetown.edu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="moma-script.js"></script>
+</body>
+</html> 
