@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvas-container">
+        <canvas id="world"></canvas>
+    </div>
+    
+    <div id="ui-overlay">
+        <div id="get-started-btn">
+            <span>Get Started</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M4 12L20 12M20 12L14 6M20 12L14 18"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Species Selection Page -->
+    <div id="species-page" class="hidden">
+        <div class="species-content">
+            <h1 id="species-title" class="slide-up-element">Pick Species</h1>
+            <p id="species-instruction" class="slide-up-element">Pick as many as you are interested in</p>
+            <div id="species-buttons" class="species-buttons">
+                <button class="species-btn slide-up-element" data-species="cats">
+                    <span>Cats</span>
+                </button>
+                <button class="species-btn slide-up-element" data-species="dogs">
+                    <span>Dogs</span>
+                </button>
+                <button class="species-btn slide-up-element" data-species="others">
+                    <span>Others</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matter.js Physics Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

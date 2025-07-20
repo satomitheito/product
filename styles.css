@@ -14,6 +14,8 @@ body {
     line-height: 1.6;
     color: #7EA7D9;
     background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container {
@@ -67,6 +69,7 @@ body {
 .nav-link:hover,
 .nav-link.active {
     color: #4A79BB;
+    font-weight: 700;
 }
 
 .nav-link.active::after {
@@ -93,52 +96,96 @@ body {
     opacity: 1;
 }
 
-.hero-title {
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 2rem;
+#canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.hello {
+#world {
+    background: transparent;
+    pointer-events: none;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Physics Pill Styling */
+.pill {
+    background: rgb(74, 121, 187);
+    border-radius: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 80px rgba(74, 121, 187, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.pill span {
     display: block;
-    font-size: 50px;
-    font-weight: 400;
-    font-family: 'Crafty Girls', cursive;
-    color: #7EA7D9;
-    margin-bottom: 0.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
 }
 
-.hello.visible {
-    opacity: 1;
-    transform: translateY(0);
+.pill.hello {
+    font-size: 100px;
+    font-weight: bold;
 }
 
-.name {
-    display: block;
-    font-size: 210px;
-    color: #4A79BB;
-    overflow: hidden;
+.pill.im {
+    font-size: 100px;
+    font-weight: bold;
 }
 
-.typing-text {
-    display: inline-block;
-    border-right: 3px solid #4A79BB;
-    animation: blink-cursor 1.2s infinite;
+.pill.name {
+    font-size: 100px;
+    font-weight: bold;
 }
 
-.typing-text.finished {
-    border-right: none;
-}
-
-@keyframes blink-cursor {
-    0%, 50% {
-        border-color: #4A79BB;
+/* Responsive design for physics pills */
+@media (max-width: 768px) {
+    .pill.hello {
+        font-size: 75px;
     }
-    51%, 100% {
-        border-color: transparent;
+    
+    .pill.im {
+        font-size: 75px;
+    }
+    
+    .pill.name {
+        font-size: 75px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pill.hello {
+        font-size: 55px;
+    }
+    
+    .pill.im {
+        font-size: 55px;
+    }
+    
+    .pill.name {
+        font-size: 55px;
     }
 }
 

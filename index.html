@@ -22,14 +22,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div id="canvas-container">
+            <canvas id="world"></canvas>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="hello">Hello! I'm</span>
-                    <span class="name">
-                        <span class="typing-text" id="typing-name"></span>
-                    </span>
-                </h1>
+                <!-- Pills will be created dynamically by physics engine -->
             </div>
         </div>
     </section>
@@ -74,8 +72,7 @@
                     </div>
                 </div>
 
-                <div class="work-card work-in-progress">
-                    <div class="wip-tape">Work in Progress</div>
+                <div class="work-card">
                     <div class="work-card-inner">
                         <!-- Front Face -->
                         <div class="work-card-front">
@@ -180,6 +177,8 @@
         </div>
     </section>
 
+    <!-- Matter.js Physics Engine -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html> 

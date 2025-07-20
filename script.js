@@ -1,50 +1,305 @@
-// Typing animation function
-function typeWriter(element, text, speed = 150) {
-    return new Promise((resolve) => {
-        let i = 0;
-        element.textContent = '';
-        
-        function type() {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            } else {
-                resolve();
-            }
-        }
-        
-        type();
-    });
-}
-
-// Initialize typing animation on page load
+// Matter.js physics simulation for portfolio landing page
 document.addEventListener('DOMContentLoaded', function() {
-    // Start typing animation
-    const typingElement = document.getElementById('typing-name');
-    const helloElement = document.querySelector('.hello');
-    const navbar = document.querySelector('.navbar');
+    // Matter.js aliases
+    const Engine = Matter.Engine;
+    const Render = Matter.Render;
+    const World = Matter.World;
+    const Bodies = Matter.Bodies;
+    const Mouse = Matter.Mouse;
+    const MouseConstraint = Matter.MouseConstraint;
+    const Events = Matter.Events;
+
+    // Create engine with precise collision settings
+    const engine = Engine.create();
+    const world = engine.world;
     
-    // Start the typing animation for "Satomi Ito"
-    typeWriter(typingElement, 'Satomi Ito', 100).then(() => {
-        // Remove cursor and show "Hello! I'm"
-        typingElement.classList.add('finished');
+    // Adjust engine settings for better collision precision
+    engine.world.gravity.y = 1;
+    engine.positionIterations = 6;
+    engine.velocityIterations = 4;
+    engine.constraintIterations = 2;
+
+    // Get canvas element and other UI elements
+    const canvas = document.getElementById('world');
+    const navbar = document.querySelector('.navbar');
+
+    // Create renderer
+    const render = Render.create({
+        canvas: canvas,
+        engine: engine,
+        options: {
+            width: window.innerWidth,
+            height: window.innerHeight,
+            wireframes: false,
+            background: 'transparent',
+            showAngleIndicator: false,
+            showVelocity: false
+        }
+    });
+
+    // Create ground (invisible)
+    const ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight + 30, window.innerWidth, 60, { 
+        isStatic: true,
+        friction: 0.8,
+        render: { fillStyle: 'transparent' }
+    });
+
+    // Create walls (invisible)
+    const leftWall = Bodies.rectangle(-30, window.innerHeight / 2, 60, window.innerHeight, { 
+        isStatic: true,
+        friction: 0.8,
+        render: { fillStyle: 'transparent' }
+    });
+    const rightWall = Bodies.rectangle(window.innerWidth + 30, window.innerHeight / 2, 60, window.innerHeight, { 
+        isStatic: true,
+        friction: 0.8,
+        render: { fillStyle: 'transparent' }
+    });
+
+    // Add walls to world
+    World.add(world, [ground, leftWall, rightWall]);
+
+    // Store physics objects
+    let physicsObjects = [];
+    let animationStarted = false;
+
+    // Helper function to get responsive sizes (medium-sized pills)
+    function getResponsiveSizes() {
+        const isTablet = window.innerWidth <= 768;
+        const isMobile = window.innerWidth <= 480;
         
-        // Delay before showing other elements
+        if (isMobile) {
+            return {
+                hello: { width: 450, height: 120 },
+                im: { width: 350, height: 120 },
+                name: { width: 500, height: 120 }
+            };
+        } else if (isTablet) {
+            return {
+                hello: { width: 550, height: 150 },
+                im: { width: 450, height: 150 },
+                name: { width: 600, height: 150 }
+            };
+        } else {
+            return {
+                hello: { width: 700, height: 170 },
+                im: { width: 550, height: 170 },
+                name: { width: 750, height: 170 }
+            };
+        }
+    }
+
+    // Helper function to create pills
+    function createPill(x, y, width, height, text, className) {
+        // Create a rounded rectangle (capsule) that matches the visual appearance
+        const pill = Bodies.rectangle(x, y, width, height, {
+            restitution: 0.4,
+            friction: 0.5,
+            chamfer: { radius: Math.min(width, height) / 2 }, // Make it perfectly rounded
+            render: {
+                fillStyle: 'transparent'
+            }
+        });
+
+        // Create HTML element for the pill
+        const pillElement = document.createElement('div');
+        pillElement.className = `pill ${className}`;
+        const textSpan = document.createElement('span');
+        textSpan.textContent = text;
+        pillElement.appendChild(textSpan);
+        pillElement.style.position = 'absolute';
+        pillElement.style.width = width + 'px';
+        pillElement.style.height = height + 'px';
+        pillElement.style.pointerEvents = 'none';
+        pillElement.style.zIndex = '100';
+        // Ensure box-sizing matches physics body
+        pillElement.style.boxSizing = 'border-box';
+        document.body.appendChild(pillElement);
+
+        // Store reference
+        pill.htmlElement = pillElement;
+        physicsObjects.push(pill);
+
+        // Add interaction after a short delay to ensure physics is set up
         setTimeout(() => {
-            helloElement.classList.add('visible');
+            addPillInteraction(pill);
+        }, 100);
+
+        return pill;
+    }
+
+    // Update HTML elements position to match physics bodies
+    function updateHTMLElements() {
+        physicsObjects.forEach(body => {
+            if (body.htmlElement) {
+                const pos = body.position;
+                const angle = body.angle;
+                
+                body.htmlElement.style.left = (pos.x - body.htmlElement.offsetWidth / 2) + 'px';
+                body.htmlElement.style.top = (pos.y - body.htmlElement.offsetHeight / 2) + 'px';
+                body.htmlElement.style.transform = `rotate(${angle}rad)`;
+            }
+        });
+    }
+
+    // Animation sequence
+    function startAnimation() {
+        if (animationStarted) return;
+        animationStarted = true;
+
+        const sizes = getResponsiveSizes();
+
+        // Calculate center position for stacking
+        const centerX = window.innerWidth / 2;
+        
+        // Create and drop "Satomi Ito" pill FIRST
+        setTimeout(() => {
+            const namePill = createPill(
+                centerX, 
+                -200, 
+                sizes.name.width, 
+                sizes.name.height, 
+                'Satomi Ito', 
+                'name'
+            );
+            World.add(world, namePill);
+        }, 100);
+
+        // Create and drop "I'm" pill SECOND (slightly to the right)
+        setTimeout(() => {
+            const imPill = createPill(
+                centerX + 80, 
+                -200, 
+                sizes.im.width, 
+                sizes.im.height, 
+                "I'm", 
+                'im'
+            );
+            World.add(world, imPill);
+        }, 600);
+
+        // Create and drop "Hello" pill LAST (slightly to the left)
+        setTimeout(() => {
+            const helloPill = createPill(
+                centerX - 80, 
+                -200, 
+                sizes.hello.width, 
+                sizes.hello.height, 
+                'Hello', 
+                'hello'
+            );
+            World.add(world, helloPill);
+        }, 1100);
+
+        // Show navbar after ALL pills have dropped and settled
+        setTimeout(() => {
             navbar.classList.add('visible');
-            
-            // Show the rest of the page sections
+        }, 2500);
+
+        // Show the rest of the page sections after navbar appears
+        setTimeout(() => {
             const selectedWorksSection = document.querySelector('.selected-works');
             const contactSection = document.querySelector('.contact');
             
-            setTimeout(() => {
-                if (selectedWorksSection) selectedWorksSection.classList.add('visible');
-                if (contactSection) contactSection.classList.add('visible');
-            }, 300);
-        }, 500);
+            if (selectedWorksSection) selectedWorksSection.classList.add('visible');
+            if (contactSection) contactSection.classList.add('visible');
+        }, 2800);
+    }
+
+    // Create mouse but don't add constraint initially - this allows scrolling
+    const mouse = Mouse.create(render.canvas);
+    
+    // Make canvas completely transparent to pointer events to allow scrolling
+    canvas.style.pointerEvents = 'none';
+    
+    // Add interaction directly to the pill HTML elements instead
+    let draggedPill = null;
+    let dragOffset = { x: 0, y: 0 };
+    
+    function addPillInteraction(pill) {
+        const htmlElement = pill.htmlElement;
+        
+        htmlElement.style.pointerEvents = 'auto';
+        htmlElement.style.cursor = 'grab';
+        
+        htmlElement.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            draggedPill = pill;
+            htmlElement.style.cursor = 'grabbing';
+            
+            const rect = htmlElement.getBoundingClientRect();
+            dragOffset.x = e.clientX - rect.left;
+            dragOffset.y = e.clientY - rect.top;
+        });
+    }
+    
+    document.addEventListener('mousemove', function(e) {
+        if (draggedPill) {
+            const newX = e.clientX - dragOffset.x;
+            const newY = e.clientY - dragOffset.y;
+            
+            // Update physics body position
+            Matter.Body.setPosition(draggedPill, { 
+                x: newX + draggedPill.htmlElement.offsetWidth / 2, 
+                y: newY + draggedPill.htmlElement.offsetHeight / 2 
+            });
+        }
     });
+    
+    document.addEventListener('mouseup', function() {
+        if (draggedPill) {
+            draggedPill.htmlElement.style.cursor = 'grab';
+            draggedPill = null;
+        }
+    });
+
+    // Ensure proper scrolling behavior
+    document.body.style.overflowY = 'auto';
+
+    // Update HTML elements after each engine update
+    Events.on(engine, 'afterUpdate', updateHTMLElements);
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        render.canvas.width = window.innerWidth;
+        render.canvas.height = window.innerHeight;
+        render.options.width = window.innerWidth;
+        render.options.height = window.innerHeight;
+        
+        // Update ground and walls
+        Matter.Body.setPosition(ground, { x: window.innerWidth / 2, y: window.innerHeight + 30 });
+        Matter.Body.setPosition(rightWall, { x: window.innerWidth + 30, y: window.innerHeight / 2 });
+    });
+
+    // Add scroll detection to show navbar and sections immediately
+    let hasScrolled = false;
+    
+    function showContentOnScroll() {
+        if (!hasScrolled) {
+            hasScrolled = true;
+            navbar.classList.add('visible');
+            const selectedWorksSection = document.querySelector('.selected-works');
+            const contactSection = document.querySelector('.contact');
+            
+            if (selectedWorksSection) selectedWorksSection.classList.add('visible');
+            if (contactSection) contactSection.classList.add('visible');
+        }
+    }
+    
+    window.addEventListener('scroll', showContentOnScroll);
+    window.addEventListener('wheel', showContentOnScroll);
+    window.addEventListener('touchmove', showContentOnScroll);
+
+    // Start animation automatically after a short delay
+    setTimeout(() => {
+        startAnimation();
+    }, 500);
+
+    // Run the engine
+    Engine.run(engine);
+
+    // Run the renderer
+    Render.run(render);
 
     // Get all navigation links
     const navLinks = document.querySelectorAll('.nav-link');

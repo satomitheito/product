@@ -185,6 +185,18 @@ function initChartToggle() {
             if (selectedChart) {
                 selectedChart.classList.add('active');
             }
+            
+            // Show/hide chart descriptions
+            const chartDescriptions = document.querySelectorAll(`[id^="${chart}-description-"]`);
+            chartDescriptions.forEach(description => {
+                description.classList.remove('active');
+            });
+            
+            // Show the selected description
+            const selectedDescription = document.getElementById(`${chart}-description-${state}`);
+            if (selectedDescription) {
+                selectedDescription.classList.add('active');
+            }
         });
     });
     
