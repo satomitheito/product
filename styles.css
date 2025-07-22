@@ -330,7 +330,7 @@ body {
     height: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .work-tags {
@@ -778,109 +778,8 @@ body {
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Specific styling for the first work card (MoMA) */
+/* Specific styling for the first work card (POPMART) */
 .work-card:first-child .work-card-front {
-    background: linear-gradient(135deg, 
-        #F3C102 0%, 
-        #FFD700 25%, 
-        #E6B800 50%, 
-        #FFA500 75%, 
-        #F3C102 100%);
-    border: 1px solid rgba(243, 193, 2, 0.3);
-}
-
-.work-card:first-child .work-card-back {
-    background: linear-gradient(135deg, 
-        #F3C102 0%, 
-        #FFD700 25%, 
-        #E6B800 50%, 
-        #FFA500 75%, 
-        #F3C102 100%);
-}
-
-.work-card:first-child .work-card-front .work-title {
-    color: #000;
-}
-
-.work-card:first-child .work-card-front .tag {
-    background: rgba(255, 255, 255, 0.95);
-    color: #333;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(243, 193, 2, 0.3);
-}
-
-.work-card:first-child .work-card-front .tag:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Specific styling for the third work card (Georgetown) */
-.work-card:nth-child(3) .work-card-front {
-    background: linear-gradient(135deg, 
-        #041E42 0%, 
-        #2C4B73 25%, 
-        #4A79BB 50%, 
-        #7EA7D9 75%, 
-        #041E42 100%);
-    border: 1px solid rgba(4, 30, 66, 0.3);
-}
-
-.work-card:nth-child(3) .work-card-back {
-    background: linear-gradient(135deg, 
-        #041E42 0%, 
-        #2C4B73 25%, 
-        #4A79BB 50%, 
-        #7EA7D9 75%, 
-        #041E42 100%);
-}
-
-.work-card:nth-child(3) .work-card-front .work-title {
-    color: #fff;
-}
-
-.work-card:nth-child(3) .work-card-front .tag {
-    background: rgba(255, 255, 255, 0.95);
-    color: #041E42;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.work-card:nth-child(3) .work-card-front .tag:hover {
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
-}
-
-.work-card:nth-child(3) .work-card-back .back-title {
-    color: #fff;
-}
-
-.work-card:nth-child(3) .work-card-back .back-description {
-    color: #f0f0f0;
-}
-
-.work-card:nth-child(3) .work-card-back .detail-item {
-    color: #fff;
-}
-
-.work-card:nth-child(3) .work-card-back .detail-item strong {
-    color: #fff;
-}
-
-.work-card:nth-child(3) .work-card-back .view-project-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-}
-
-.work-card:nth-child(3) .work-card-back .view-project-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-}
-
-/* Specific styling for the second work card (PopMart) - Red Gradient */
-.work-card:nth-child(2) .work-card-front {
     background: linear-gradient(135deg, 
         #FF6B6B 0%, 
         #FF5252 25%, 
@@ -890,7 +789,7 @@ body {
     border: 1px solid rgba(211, 47, 47, 0.3);
 }
 
-.work-card:nth-child(2) .work-card-back {
+.work-card:first-child .work-card-back {
     background: linear-gradient(135deg, 
         #FF6B6B 0%, 
         #FF5252 25%, 
@@ -899,13 +798,78 @@ body {
         #FF6B6B 100%);
 }
 
+.work-card:first-child .work-card-front .work-title {
+    color: #fff;
+}
+
+.work-card:first-child .work-card-front .tag {
+    background: rgba(255, 255, 255, 0.95);
+    color: #D32F2F;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.work-card:first-child .work-card-front .tag:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+.work-card:first-child .work-card-back .back-title {
+    color: #fff;
+}
+
+.work-card:first-child .work-card-back .back-description {
+    color: #f0f0f0;
+}
+
+.work-card:first-child .work-card-back .detail-item {
+    color: #fff;
+}
+
+.work-card:first-child .work-card-back .detail-item strong {
+    color: #fff;
+}
+
+.work-card:first-child .work-card-back .view-project-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.work-card:first-child .work-card-back .view-project-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Specific styling for the second work card (Georgetown) */
+.work-card:nth-child(2) .work-card-front {
+    background: linear-gradient(135deg, 
+        #041E42 0%, 
+        #2C4B73 25%, 
+        #4A79BB 50%, 
+        #7EA7D9 75%, 
+        #041E42 100%);
+    border: 1px solid rgba(4, 30, 66, 0.3);
+}
+
+.work-card:nth-child(2) .work-card-back {
+    background: linear-gradient(135deg, 
+        #041E42 0%, 
+        #2C4B73 25%, 
+        #4A79BB 50%, 
+        #7EA7D9 75%, 
+        #041E42 100%);
+}
+
 .work-card:nth-child(2) .work-card-front .work-title {
     color: #fff;
 }
 
 .work-card:nth-child(2) .work-card-front .tag {
     background: rgba(255, 255, 255, 0.95);
-    color: #D32F2F;
+    color: #041E42;
     box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -913,11 +877,6 @@ body {
 .work-card:nth-child(2) .work-card-front .tag:hover {
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
-}
-
-.work-card:nth-child(2) .work-card-front .placeholder-image {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
 }
 
 .work-card:nth-child(2) .work-card-back .back-title {
@@ -944,6 +903,71 @@ body {
 }
 
 .work-card:nth-child(2) .work-card-back .view-project-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Specific styling for the third work card (MoMA) */
+.work-card:nth-child(3) .work-card-front {
+    background: linear-gradient(135deg, 
+        #F3C102 0%, 
+        #FFD700 25%, 
+        #E6B800 50%, 
+        #FFA500 75%, 
+        #F3C102 100%);
+    border: 1px solid rgba(243, 193, 2, 0.3);
+}
+
+.work-card:nth-child(3) .work-card-back {
+    background: linear-gradient(135deg, 
+        #F3C102 0%, 
+        #FFD700 25%, 
+        #E6B800 50%, 
+        #FFA500 75%, 
+        #F3C102 100%);
+}
+
+.work-card:nth-child(3) .work-card-front .work-title {
+    color: #fff;
+}
+
+.work-card:nth-child(3) .work-card-front .tag {
+    background: rgba(255, 255, 255, 0.95);
+    color: #B8860B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(243, 193, 2, 0.3);
+}
+
+.work-card:nth-child(3) .work-card-front .tag:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.work-card:nth-child(3) .work-card-back .back-title {
+    color: #fff;
+}
+
+.work-card:nth-child(3) .work-card-back .back-description {
+    color: #fff;
+}
+
+.work-card:nth-child(3) .work-card-back .detail-item {
+    color: #fff;
+}
+
+.work-card:nth-child(3) .work-card-back .detail-item strong {
+    color: #fff;
+}
+
+.work-card:nth-child(3) .work-card-back .view-project-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.work-card:nth-child(3) .work-card-back .view-project-btn:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-2px);

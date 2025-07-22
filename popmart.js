@@ -1,5 +1,8 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize scroll position preservation
+    initScrollPositionPreservation();
+    
     // Initialize scroll animations
     initScrollAnimations();
     
@@ -14,7 +17,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize chart toggle functionality
     initChartToggle();
+    
+    // Initialize architectural details dropdown
+    initArchitecturalDetailsDropdown();
 });
+
+// Scroll position preservation
+function initScrollPositionPreservation() {
+    // Restore scroll position on page load
+    const savedScrollPosition = localStorage.getItem('popmart-scroll-position');
+    if (savedScrollPosition) {
+        // Use a small delay to ensure the page is fully loaded
+        setTimeout(() => {
+            window.scrollTo(0, parseInt(savedScrollPosition));
+            // Clear the saved position after restoring
+            localStorage.removeItem('popmart-scroll-position');
+        }, 100);
+    }
+    
+    // Save scroll position before page unloads (refresh, navigation, etc.)
+    window.addEventListener('beforeunload', function() {
+        localStorage.setItem('popmart-scroll-position', window.scrollY.toString());
+    });
+}
 
 // Scroll animations
 function initScrollAnimations() {
@@ -213,4 +238,100 @@ function initChartToggle() {
             filledButton.classList.remove('highlight-connection');
         });
     }
-} 
+}
+
+// Initialize architectural details dropdown functionality
+function initArchitecturalDetailsDropdown() {
+    const toggleButton = document.getElementById('architecturalToggle');
+    const dropdownContent = document.getElementById('architecturalContent');
+    
+    if (toggleButton && dropdownContent) {
+        toggleButton.addEventListener('click', function() {
+            // Toggle the expanded state
+            const isExpanded = dropdownContent.classList.contains('expanded');
+            
+            if (isExpanded) {
+                // Collapse the dropdown
+                toggleButton.classList.remove('expanded');
+                dropdownContent.classList.remove('expanded');
+                
+                // Update button text
+                const toggleText = toggleButton.querySelector('.toggle-text');
+                if (toggleText) {
+                    toggleText.textContent = 'View Technical Implementation Details';
+                }
+                
+                // Update aria attributes for accessibility
+                toggleButton.setAttribute('aria-expanded', 'false');
+                
+            } else {
+                // Expand the dropdown
+                toggleButton.classList.add('expanded');
+                dropdownContent.classList.add('expanded');
+                
+                // Update button text
+                const toggleText = toggleButton.querySelector('.toggle-text');
+                if (toggleText) {
+                    toggleText.textContent = 'Hide Technical Implementation Details';
+                }
+                
+                // Update aria attributes for accessibility
+                toggleButton.setAttribute('aria-expanded', 'true');
+                
+                // Smooth scroll to show the expanded content
+                setTimeout(() => {
+                    const architecturalSection = document.getElementById('architectural-details');
+                    if (architecturalSection) {
+                        const offsetTop = architecturalSection.offsetTop - 80; // Account for navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 300);
+            }
+        });
+        
+        // Initialize aria attributes
+        toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.setAttribute('aria-controls', 'architecturalContent');
+        
+        // Add keyboard support (Enter and Space keys)
+        toggleButton.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                this.click();
+            }
+        });
+        
+        // Optional: Close dropdown when clicking outside (if desired)
+        document.addEventListener('click', function(event) {
+            const isClickInsideSection = document.getElementById('architectural-details').contains(event.target);
+            
+            if (!isClickInsideSection && dropdownContent.classList.contains('expanded')) {
+                // Optionally auto-close when clicking outside the section
+                // Uncomment the next line if you want this behavior
+                // toggleButton.click();
+            }
+        });
+        
+        // Initialize scroll reveal for detail items when dropdown expands
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && dropdownContent.classList.contains('expanded')) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Observe detail items for scroll animations
+        const detailItems = document.querySelectorAll('#architectural-details .detail-item');
+        detailItems.forEach(item => {
+            observer.observe(item);
+        });
+    }
+}
