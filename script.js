@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get canvas element and other UI elements
     const canvas = document.getElementById('world');
     const navbar = document.querySelector('.navbar');
+    const scrollIndicator = document.getElementById('scroll-indicator');
 
     // Create renderer
     const render = Render.create({
@@ -194,6 +195,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show navbar after ALL pills have dropped and settled
         setTimeout(() => {
             navbar.classList.add('visible');
+            // Show scroll indicator when navbar appears
+            if (scrollIndicator) {
+                scrollIndicator.classList.add('visible');
+            }
         }, 2500);
 
         // Show the rest of the page sections after navbar appears
@@ -283,6 +288,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (selectedWorksSection) selectedWorksSection.classList.add('visible');
             if (contactSection) contactSection.classList.add('visible');
+        }
+        
+        // Hide scroll indicator when user scrolls
+        if (scrollIndicator) {
+            scrollIndicator.classList.remove('visible');
         }
     }
     
