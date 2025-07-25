@@ -3008,7 +3008,12 @@ body {
 /* Connect Section */
 .connect-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #F3C102 0%, #E6B800 50%, #F3C102 100%);
+    background: linear-gradient(135deg, 
+        #F3C102 0%, 
+        #FFD700 25%, 
+        #E6B800 50%, 
+        #FFA500 75%, 
+        #F3C102 100%);
     position: relative;
     text-align: center;
     overflow: hidden;

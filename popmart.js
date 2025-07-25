@@ -1,7 +1,12 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize scroll position preservation
-    initScrollPositionPreservation();
+    // Force scroll to top on page load
+    window.scrollTo(0, 0);
+    
+    // Additional safeguard to prevent browser scroll restoration
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
     
     // Initialize scroll animations
     initScrollAnimations();
@@ -21,25 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize architectural details dropdown
     initArchitecturalDetailsDropdown();
 });
-
-// Scroll position preservation
-function initScrollPositionPreservation() {
-    // Restore scroll position on page load
-    const savedScrollPosition = localStorage.getItem('popmart-scroll-position');
-    if (savedScrollPosition) {
-        // Use a small delay to ensure the page is fully loaded
-        setTimeout(() => {
-            window.scrollTo(0, parseInt(savedScrollPosition));
-            // Clear the saved position after restoring
-            localStorage.removeItem('popmart-scroll-position');
-        }, 100);
-    }
-    
-    // Save scroll position before page unloads (refresh, navigation, etc.)
-    window.addEventListener('beforeunload', function() {
-        localStorage.setItem('popmart-scroll-position', window.scrollY.toString());
-    });
-}
 
 // Scroll animations
 function initScrollAnimations() {

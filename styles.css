@@ -354,6 +354,9 @@ body {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate3d(0, 0, 0);
 }
 
 .work-card:hover .work-card-inner {
@@ -384,6 +387,9 @@ body {
     align-items: center;
     justify-content: center;
     padding: 30px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .work-image {
@@ -941,6 +947,9 @@ body {
         #4A79BB 50%, 
         #7EA7D9 75%, 
         #041E42 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .work-card:nth-child(2) .work-card-front .work-title {
