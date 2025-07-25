@@ -27,27 +27,56 @@ document.addEventListener('DOMContentLoaded', function() {
     initArchitecturalDetailsDropdown();
 });
 
-// Scroll animations
+// Enhanced scroll animations
 function initScrollAnimations() {
+    
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('revealed');
+                
+                // Add stagger effect for child elements
+                if (entry.target.classList.contains('scroll-reveal-stagger')) {
+                    const children = entry.target.querySelectorAll('.scroll-reveal-stagger');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('revealed');
+                        }, index * 100);
+                    });
+                }
             }
         });
     }, observerOptions);
 
-    // Observe scroll reveal elements
-    const scrollElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-stagger');
+    // Observe all scroll reveal elements
+    const scrollElements = document.querySelectorAll(
+        '.scroll-reveal, .scroll-reveal-stagger, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-fade'
+    );
+    
     scrollElements.forEach(element => {
         observer.observe(element);
     });
+
+    // Trigger animations for elements already in view on page load
+    setTimeout(() => {
+        const elementsInView = document.querySelectorAll(
+            '.scroll-reveal, .scroll-reveal-stagger, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .scroll-reveal-fade'
+        );
+        
+        elementsInView.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isInView = rect.top < window.innerHeight - 100 && rect.bottom > 0;
+            
+            if (isInView) {
+                element.classList.add('revealed');
+            }
+        });
+    }, 100);
 }
 
 // Navbar scroll effect

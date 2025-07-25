@@ -252,6 +252,94 @@ body {
     }
 }
 
+/* Enhanced Scroll Reveal Animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animation for multiple elements */
+.scroll-reveal-stagger {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal-stagger.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade in from different directions */
+.scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal-scale.revealed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Subtle fade in only */
+.scroll-reveal-fade {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.scroll-reveal-fade.revealed {
+    opacity: 1;
+}
+
+/* Add delays for staggered animations */
+.scroll-reveal-stagger:nth-child(1) { transition-delay: 0.1s; }
+.scroll-reveal-stagger:nth-child(2) { transition-delay: 0.2s; }
+.scroll-reveal-stagger:nth-child(3) { transition-delay: 0.3s; }
+.scroll-reveal-stagger:nth-child(4) { transition-delay: 0.4s; }
+.scroll-reveal-stagger:nth-child(5) { transition-delay: 0.5s; }
+.scroll-reveal-stagger:nth-child(6) { transition-delay: 0.6s; }
+
+/* Prevent animation flashing on page load */
+.no-js .scroll-reveal,
+.no-js .scroll-reveal-stagger,
+.no-js .scroll-reveal-left,
+.no-js .scroll-reveal-right,
+.no-js .scroll-reveal-scale,
+.no-js .scroll-reveal-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
