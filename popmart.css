@@ -3948,22 +3948,25 @@ body {
 }
 
 .prediction-simple-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
     align-items: center;
 }
 
-/* Image Section */
-.prediction-image-section {
+/* Images Section */
+.prediction-images-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+    width: 100%;
 }
 
 .prediction-placeholder {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
+    flex: 1;
 }
 
 .prediction-image {
@@ -3987,6 +3990,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .prediction-text-box {
@@ -3997,6 +4001,8 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
+    max-width: 800px;
+    text-align: center;
 }
 
 
@@ -4058,8 +4064,12 @@ body {
 /* Responsive Design for Prediction Section */
 @media (max-width: 768px) {
     .prediction-simple-container {
-        grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .prediction-images-section {
+        flex-direction: column;
+        gap: 20px;
     }
     
     .prediction-interface {
@@ -4210,8 +4220,8 @@ body {
 
 /* Details Grid */
 .architectural-details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 30px;
     margin-top: 40px;
     padding: 40px 20px;
@@ -4247,6 +4257,138 @@ body {
         radial-gradient(circle at 80% 80%, rgba(184, 0, 26, 0.02) 0%, transparent 50%),
         radial-gradient(circle at 40% 60%, rgba(230, 0, 33, 0.01) 0%, transparent 40%);
     pointer-events: none;
+}
+
+/* PDF Viewer Styles */
+.pdf-viewer-container {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.pdf-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pdf-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #E60021, #B8001A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pdf-header p {
+    font-size: 1rem;
+    color: #5a6c7d;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.pdf-embed-wrapper {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(230, 0, 33, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pdf-embed-wrapper:hover {
+    box-shadow: 
+        0 20px 45px rgba(230, 0, 33, 0.15),
+        0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: rgba(230, 0, 33, 0.2);
+}
+
+.pdf-embed {
+    border: none;
+    border-radius: 16px;
+    background: #ffffff;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.pdf-fallback {
+    display: none;
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    border: 2px dashed rgba(230, 0, 33, 0.3);
+}
+
+.pdf-fallback p {
+    font-size: 1.1rem;
+    color: #5a6c7d;
+    margin-bottom: 20px;
+}
+
+.pdf-fallback a {
+    color: #E60021;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    background: rgba(230, 0, 33, 0.1);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.pdf-fallback a:hover {
+    background: #E60021;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 0, 33, 0.3);
+}
+
+/* PDF Loading Animation */
+.pdf-embed-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(230, 0, 33, 0.1), transparent);
+    z-index: 1;
+    animation: loading-shimmer 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes loading-shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* PDF Responsive Design */
+@media (max-width: 768px) {
+    .pdf-embed {
+        height: 600px;
+    }
+    
+    .pdf-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .pdf-header p {
+        font-size: 0.9rem;
+    }
+    
+    .architectural-details-grid {
+        padding: 20px 15px;
+    }
 }
 
 /* Individual Detail Items */

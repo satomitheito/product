@@ -448,23 +448,26 @@
 
                 <div class="prediction-content">
                     <div class="prediction-description scroll-reveal">
-                        <p>On the same page, there will be a predictions drop down. In the drop down will list each item in that series. Users can click on the item of their choice and a pie chart will reveal which box has a likelihood of containing that figure based on the user inputs.</p>
+                        <p>On the same page, there will be a predictions dropdown. The dropdown will list each item or box number in that series. Users can click on their choice and view a pie chart/bar chart that reveals the likelihood of each box containing their desired figure based on the user inputs.</p>
                     </div>
 
                     <!-- Prediction Interface -->
                     <div class="prediction-interface scroll-reveal">
                         <div class="prediction-simple-container">
-                            <!-- Image Placeholder -->
-                            <div class="prediction-image-section">
+                            <!-- Images Section -->
+                            <div class="prediction-images-section">
                                 <div class="prediction-placeholder">
                                     <img src="popmart-images/piechart.png" alt="Pie Chart Prediction Interface" class="prediction-image">
+                                </div>
+                                <div class="prediction-placeholder">
+                                    <img src="popmart-images/byfigure.png" alt="By Figure Prediction Interface" class="prediction-image">
                                 </div>
                             </div>
 
                             <!-- Text Section -->
                             <div class="prediction-text-section">
                                 <div class="prediction-text-box">
-                                    <p>The predictions/chart will dynamically update itself based on user input so users do not need to manually edit anything here.</p>
+                                    <p>The predictions/charts will dynamically update itself based on user input so users do not need to manually edit anything here.</p>
                                 </div>
                             </div>
                         </div>
@@ -498,7 +501,20 @@
                     <!-- Collapsible Content -->
                     <div class="dropdown-content" id="architecturalContent">
                         <div class="architectural-details-grid">
-                            <!-- Content will be added here -->
+                            <!-- PDF Viewer Container -->
+                            <div class="pdf-viewer-container">
+                                <div class="pdf-embed-wrapper">
+                                    <embed 
+                                        src="popmart-images/PopMart Scraper - System Architecture Overview.pdf" 
+                                        type="application/pdf" 
+                                        width="100%" 
+                                        height="800"
+                                        class="pdf-embed">
+                                    <div class="pdf-fallback">
+                                        <p>Unable to display PDF. <a href="popmart-images/PopMart Scraper - System Architecture Overview.pdf" target="_blank" download>Download PDF</a></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
