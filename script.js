@@ -317,27 +317,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle navigation click events
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all links
-            navLinks.forEach(nav => nav.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // Get target section
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
             
-            if (targetSection) {
-                // Calculate offset for fixed navbar
-                const offsetTop = targetSection.offsetTop - 80;
+            // Only handle internal anchor links (starting with #)
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
                 
-                // Smooth scroll to section
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                // Remove active class from all links
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Get target section
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Calculate offset for fixed navbar
+                    const offsetTop = targetSection.offsetTop - 80;
+                    
+                    // Smooth scroll to section
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
