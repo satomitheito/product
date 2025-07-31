@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize architectural details dropdown
     initArchitecturalDetailsDropdown();
+    
+    // Initialize expandable images
+    initExpandableImages();
 });
 
 // Enhanced scroll animations
@@ -349,4 +352,58 @@ function initArchitecturalDetailsDropdown() {
             observer.observe(item);
         });
     }
+}
+
+// Initialize expandable images functionality
+function initExpandableImages() {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModal = document.querySelector('.close-modal');
+    
+    // Add click event listeners to all expandable images
+    const expandableImages = document.querySelectorAll('.expandable-image');
+    
+    expandableImages.forEach(image => {
+        image.addEventListener('click', function() {
+            const imageSrc = this.getAttribute('data-image');
+            const imageTitle = this.getAttribute('data-title');
+            
+            if (imageSrc && modalImage && modalTitle) {
+                modalImage.src = imageSrc;
+                modalImage.alt = imageTitle;
+                modalTitle.textContent = imageTitle;
+                modal.style.display = 'block';
+                
+                // Prevent body scroll when modal is open
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Close modal when clicking the close button
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // Close modal when clicking outside the modal content
+    if (modal) {
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
 }

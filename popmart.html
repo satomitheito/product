@@ -50,6 +50,23 @@
         </div>
     </section>
 
+    <!-- Introduction Section -->
+    <section id="introduction" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title scroll-reveal">What is POP MART & POP NOW?</h2>
+                </div>
+
+                <div class="introduction-content">
+                    <div class="intro-paragraph scroll-reveal">
+                        <p><strong>POP MART</strong> is a global lifestyle company that sells collectible figurines through "blind boxes", which are sealed packages containing random items from various series. With a 600% increase in market value on the Hong Kong Stock Exchange (HKSE), POP MART has become a major player in the collectibles industry. Their digital platform <strong>POP NOW</strong> allows users to virtually open these blind boxes online, where collectors and fans can <strong>browse series, select boxes, and receive hints</strong> about what's NOT in each box before making their purchase decision. The excitement comes from not knowing which collectible figure you'll get until you open it, making strategic purchasing decisions crucial for users who want specific rare figures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Problem Section -->
     <section id="problem" class="section">
         <div class="container">
@@ -162,7 +179,7 @@
 
                         <div class="goal-item scroll-reveal-stagger">
                             <div class="goal-text">
-                                <h3>Let users easily customize the blind boxes by removing specified items.</h3>
+                                <h3>Easy-to-read results give direct answers on which box to pick.</h3>
                             </div>
                         </div>
                     </div>
@@ -181,7 +198,7 @@
 
                 <div class="rethinking-content">
                     <div class="rethinking-description scroll-reveal">
-                        <p>This new tool should not stray far from POP NOW's flow. As mentioned on their official website, their flow is three simple steps.</p>
+                        <p>This page should not stray far from POP NOW's flow. <br> As mentioned on their official website, their flow is three simple steps.</p>
                     </div>
 
                     <div class="flow-comparison">
@@ -224,6 +241,26 @@
                     <div class="solution-description scroll-reveal">
                         <h3>A platform that generates predictions based on user input, guiding them on which blind box to pick.</h3>
                     </div>
+                    
+                    <!-- Solution Overview -->
+                    <div class="solution-overview scroll-reveal">
+                        <div class="solution-grid">
+                            <div class="solution-card">
+                                <h4>Quick Decision Making</h4>
+                                <p>Eliminates the time pressure by providing instant probability calculations, allowing users to make informed decisions within the 5-minute window.</p>
+                            </div>
+                            
+                            <div class="solution-card">
+                                <h4>Visual Data Representation</h4>
+                                <p>Dynamic charts and visualizations help users understand complex probability data at a glance, making strategic purchasing decisions more accessible.</p>
+                            </div>
+                            
+                            <div class="solution-card">
+                                <h4>Organized Input Management</h4>
+                                <p>Streamlines the hint input process with an intuitive interface that keeps track of all user selections in an organized, easy-to-review format.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -243,11 +280,11 @@
                         <div class="showcase-container">
                             <div class="text-boxes-left">
                                 <div class="text-box-1 scroll-reveal">
-                                    <p>The tabs page is kept simple to avoid confusion.</p>
+                                    <p>Simple tab design reduces cognitive load during the 5-minute decision window.</p>
                                 </div>
 
                                 <div class="text-box-2 scroll-reveal">
-                                    <p>Guides users to the product page</p>
+                                    <p>Clear navigation guides users directly to the product page without confusion.</p>
                                 </div>
                             </div>
 
@@ -260,7 +297,7 @@
                                             <polygon points="0 0, 10 3.5, 0 7" fill="#E60021" />
                                         </marker>
                                     </defs>
-                                    <path d="M 100 20 L 100 150 L 680 150 L 680 120"
+                                    <path d="M 100 130 L 100 150 L 680 150 L 680 120"
                                           stroke="#E60021"
                                           stroke-width="2"
                                           stroke-dasharray="8,4"
@@ -280,7 +317,7 @@
                                             <polygon points="0 0, 10 3.5, 0 7" fill="#E60021" />
                                         </marker>
                                     </defs>
-                                    <path d="M 150 270 L 150 60 Q 150 50 160 50 L 390 50 Q 400 50 400 60 L 400 140"
+                                    <path d="M 150 90 L 150 60 Q 150 50 160 50 L 390 50 Q 400 50 400 60 L 400 140"
                                           stroke="#E60021"
                                           stroke-width="2"
                                           stroke-dasharray="8,4"
@@ -293,21 +330,45 @@
 
                             <div class="showcase-images">
                                 <div class="main-image-container">
-                                    <div class="home-page-placeholder">
+                                    <div class="home-page-placeholder expandable-image" data-image="popmart-images/Home.png" data-title="Home Page Interface">
                                         <img src="popmart-images/Home.png" alt="Home Page Interface" class="placeholder-image">
+                                        <div class="expand-overlay">
+                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M21 3L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M3 21L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="overlapping-images">
                                     <div class="overlap-image-1">
-                                        <div class="home-page-placeholder small">
-                                            <img src="popmart-images/How_To_Use2.png" alt="Home Page Detail" class="placeholder-image">
+                                        <div class="home-page-placeholder small expandable-image" data-image="popmart-images/How_To_Use2.png" data-title="How To Use Instructions">
+                                            <img src="popmart-images/How_To_Use2.png" alt="How To Use Instructions" class="placeholder-image">
+                                            <div class="expand-overlay">
+                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M21 3L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M3 21L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="overlap-image-2">
-                                        <div class="how-to-use-placeholder">
+                                        <div class="how-to-use-placeholder expandable-image" data-image="popmart-images/How_To_Use3.png" data-title="How To Use Instructions">
                                             <img src="popmart-images/How_To_Use3.png" alt="How To Use Instructions" class="placeholder-image">
+                                            <div class="expand-overlay">
+                                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M21 3L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M3 21L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -317,7 +378,7 @@
 
                     <div class="how-to-use-explanation scroll-reveal">
                         <div class="explanation-text">
-                            <h3>How To Use tab are the instructions. I kept it simple and straight to the point to avoid confusion, following the "Pick A Box" and "Input Hints" pipeline.</h3>
+                            <p>Step-by-step instructions follow the familiar "Pick A Box" and "Input Hints" pipeline, eliminating the learning curve.</p>
                         </div>
                     </div>
 
@@ -340,20 +401,27 @@
                         <div class="product-showcase-container">
                             <div class="product-image-left">
                                 <div class="product-interface-container">
-                                    <div class="product-interface-placeholder">
+                                    <div class="product-interface-placeholder expandable-image" data-image="popmart-images/Product.png" data-title="Product Series Interface">
                                         <img src="popmart-images/Product.png" alt="Product Series Interface" class="product-interface-image">
+                                        <div class="expand-overlay">
+                                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M21 3L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M3 21L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
 
                             <div class="product-text-boxes-right">
                                 <div class="product-text-box-1 scroll-reveal">
-                                    <p>Lists all the series that are active.</p>
+                                    <p>Shows all active series, eliminating time wasted searching for available options.</p>
                                 </div>
 
                                 <div class="product-text-box-2 scroll-reveal">
-                                    <p>Users can scroll and search for choice series.</p>
+                                    <p>Search functionality helps users find specific series among hundreds of options in seconds.</p>
                                 </div>
                             </div>
                         </div>
@@ -376,25 +444,33 @@
                     <div class="pick-box-main-interface scroll-reveal">
                         <div class="interface-container">
                             <div class="interface-image-container">
-                                <div class="interface-placeholder">
+                                <div class="interface-placeholder expandable-image" data-image="popmart-images/229 Chaka Box 1 Opened and Selected Cropped.png" data-title="Pick A Box Interface">
                                     <img src="popmart-images/229 Chaka Box 1 Opened and Selected Cropped.png" alt="Pick A Box Interface" class="interface-image">
+                                    <div class="expand-overlay">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M21 3L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M3 21L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
                                 </div>
-
-
                             </div>
 
                             <!-- Text explanations with arrows -->
                             <div class="pick-box-explanations">
                                 <div class="explanation-item explanation-1 scroll-reveal-stagger">
-                                    <p>Users can select items that are not in the blind box to mark them as NOT ME.</p>
+                                    <h4>Hint Input Efficiency</h4>
+                                    <p>Mark items as "NOT ME" to track exclusions and reduce errors during time-sensitive decisions.</p>
                                 </div>
-
 
                                 <div class="explanation-item explanation-3 scroll-reveal-stagger">
-                                    <p>Users can select different boxes to input hints.</p>
+                                    <h4>Multi-Box Management</h4>
+                                    <p>Compare probabilities across multiple boxes to make strategic purchasing decisions.</p>
                                 </div>
                                 <div class="explanation-item explanation-2 scroll-reveal-stagger">
-                                    <p>Users can check out a summary of all their inputs</p>
+                                    <h4>Input Verification</h4>
+                                    <p>Review a summary of all inputs before proceeding with prediction-based decisions.</p>
                                 </div>
                             </div>
                         </div>
@@ -407,9 +483,10 @@
                             <div class="chart-item">
                                 <div class="chart-header">
                                     <h3>Box Status Overview</h3>
+                                    <p class="chart-description">See which boxes you've filled with hints and which ones still need your input</p>
                                     <div class="chart-toggle-buttons">
-                                        <button type="button" class="toggle-btn active" data-chart="empty" data-state="not-filled">Not Filled</button>
-                                        <button type="button" class="toggle-btn" data-chart="empty" data-state="filled">Filled</button>
+                                        <button type="button" class="toggle-btn active" data-chart="empty" data-state="not-filled">Empty Boxes</button>
+                                        <button type="button" class="toggle-btn" data-chart="empty" data-state="filled">Filled Boxes</button>
                                     </div>
                                 </div>
 
@@ -424,7 +501,8 @@
                                 </div>
 
                                 <div class="chart-description active" id="empty-description-not-filled">
-                                    <p>This is what an empty box status will look like. Sometimes not all boxes in the series will be available to the user which means some boxes will remain empty.</p>
+                                    <h4>Box Completion Tracking</h4>
+                                    <p>Visual overview prevents users from losing track of which boxes they've already filled with hints, ensuring systematic completion of all options.</p>
                                 </div>
 
                                 <div class="chart-description" id="empty-description-filled">
@@ -448,7 +526,8 @@
 
                 <div class="prediction-content">
                     <div class="prediction-description scroll-reveal">
-                        <p>On the same page, there will be a predictions dropdown. The dropdown will list each item or box number in that series. Users can click on their choice and view a pie chart/bar chart that reveals the likelihood of each box containing their desired figure based on the user inputs.</p>
+                        <h4>Clear Visual Probability Results</h4>
+                        <p>Users can select their desired figure and instantly see their chances presented through clear, easy-to-read visualizations. The pie chart shows overall probability distribution across all boxes, while the bar chart highlights the top 5 boxes for a specific figure. This transforms complex probability calculations into simple, actionable insights that help users make confident decisions within their 5-minute window.</p>
                     </div>
 
                     <!-- Prediction Interface -->
@@ -456,18 +535,58 @@
                         <div class="prediction-simple-container">
                             <!-- Images Section -->
                             <div class="prediction-images-section">
-                                <div class="prediction-placeholder">
-                                    <img src="popmart-images/piechart.png" alt="Pie Chart Prediction Interface" class="prediction-image">
+                                <div class="prediction-placeholder expandable-image" data-image="popmart-images/piechart.png" data-title="Luck Meter Prediction Interface">
+                                    <img src="popmart-images/piechart.png" alt="Luck Meter Prediction Interface" class="prediction-image">
+                                    <div class="expand-overlay">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M21 3L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M3 21L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="prediction-placeholder">
-                                    <img src="popmart-images/byfigure.png" alt="By Figure Prediction Interface" class="prediction-image">
+                                <div class="prediction-placeholder expandable-image" data-image="popmart-images/byfigure.png" data-title="Treasure Hunt Prediction Interface">
+                                    <img src="popmart-images/byfigure.png" alt="Treasure Hunt Prediction Interface" class="prediction-image">
+                                    <div class="expand-overlay">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M21 3L13 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M3 21L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Text Section -->
                             <div class="prediction-text-section">
                                 <div class="prediction-text-box">
-                                    <p>The predictions/charts will dynamically update itself based on user input so users do not need to manually edit anything here.</p>
+                                    <p>By presenting probabilities through clear visual charts, users can instantly understand which boxes offer the best chances for their desired figure. The pie chart provides a quick overview of all box probabilities, while the bar chart focuses on the top contenders. This eliminates the guesswork and time-consuming manual calculations, allowing users to make data-driven decisions quickly during their limited 5-minute window.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prediction Visualization Section -->
+                    <div class="prediction-metaphors scroll-reveal">
+                        <div class="metaphors-container">
+                            <h3>Two Clear Ways to View Probabilities</h3>
+                            <div class="metaphors-grid">
+                                <div class="metaphor-card">
+                                    <div class="metaphor-icon">📊</div>
+                                    <h4>Overall Distribution</h4>
+                                    <p>The pie chart shows probability distribution across all available boxes, giving users a complete overview of their options.</p>
+                                </div>
+                                <div class="metaphor-card">
+                                    <div class="metaphor-icon">📈</div>
+                                    <h4>Top Contenders</h4>
+                                    <p>The bar chart highlights the top 5 boxes for a specific figure, showing exact percentages. This helps users quickly identify the best options and focus their attention on the most promising boxes.</p>
+                                </div>
+                                <div class="metaphor-card">
+                                    <div class="metaphor-icon">⚡</div>
+                                    <h4>Instant Results</h4>
+                                    <p>Both visualizations update in real-time as users input hints, providing immediate feedback on how their choices affect probability calculations.</p>
                                 </div>
                             </div>
                         </div>
@@ -535,6 +654,15 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Modal Overlay -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-title" id="modalTitle"></div>
+        </div>
+    </div>
 
     <script src="popmart.js"></script>
 </body>
