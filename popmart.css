@@ -2445,15 +2445,6 @@ body {
     letter-spacing: 0.02em;
 }
 
-/* Curved Arrow */
-.curved-arrow {
-    position: absolute;
-    top: -75px;
-    left: 40px; /* Adjusted for longer arrow to ensure proper alignment */
-    pointer-events: none;
-    z-index: 10;
-}
-
 .arrow-svg {
     width: 420px;
     height: 200px;
@@ -2476,15 +2467,6 @@ body {
     }
 }
 
-/* Second Curved Arrow */
-.curved-arrow-2 {
-    position: absolute;
-    top: 360px; /* Much lower starting point */
-    left: 115px; /* Adjusted to align with center of second text box */
-    pointer-events: none;
-    z-index: 10;
-}
-
 .arrow-svg-2 {
     width: 720px;
     height: 250px;
@@ -2504,14 +2486,6 @@ body {
     }
     100% {
         stroke-dashoffset: 24;
-    }
-}
-
-/* Responsive arrow adjustments */
-@media (max-width: 1024px) {
-    .curved-arrow,
-    .curved-arrow-2 {
-        display: none;
     }
 }
 
@@ -3342,7 +3316,7 @@ body {
 
 /* Pick A Box and Input Hints Section */
 .pick-box-content {
-    padding: 60px 0;
+    padding: 60px 0 0;
     position: relative;
 }
 
@@ -3397,6 +3371,211 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 14px;
+}
+
+/* Video Styles */
+.interface-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.interface-video-placeholder {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px dashed #E60021;
+    position: relative;
+    overflow: hidden;
+}
+
+.interface-video-placeholder:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    border-color: #B8001A;
+}
+
+.interface-video {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    background: #000;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    border-radius: 14px;
+}
+
+.interface-video-placeholder:hover .video-overlay {
+    opacity: 0.8;
+}
+
+.play-indicator {
+    width: 60px;
+    height: 60px;
+    background: rgba(230, 0, 33, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.play-indicator svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+    margin-left: 4px;
+}
+
+.interface-video-placeholder:hover .play-indicator {
+    transform: scale(1.1);
+    background: rgba(230, 0, 33, 1);
+}
+
+/* Hide overlay when video is playing */
+.interface-video-placeholder.playing .video-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Design Consistency Card Styles */
+.comparison-content {
+    padding: 40px 0;
+}
+
+.consistency-card {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.consistency-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: #ffffff;
+    padding: 40px;
+    text-align: center;
+}
+
+.card-header h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.card-header h3::after {
+    display: none;
+}
+
+.card-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #5a6c7d;
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card-content {
+    padding: 40px;
+}
+
+.consistency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.consistency-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.consistency-image {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.consistency-image:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.consistency-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+}
+
+.consistency-text {
+    max-width: 350px;
+}
+
+.consistency-text h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.consistency-item:hover .consistency-text h4 {
+    color: #2c3e50;
+}
+
+.consistency-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5a6c7d;
+    margin: 0;
 }
 
 .interface-placeholder::before {
@@ -3809,7 +3988,8 @@ body {
         text-align: center;
     }
     
-    .interface-image-container {
+    .interface-image-container,
+    .interface-video-container {
         order: 1;
     }
     
@@ -3849,6 +4029,10 @@ body {
     
     .interface-placeholder {
         height: 300px;
+    }
+    
+    .interface-video-placeholder {
+        height: auto;
     }
     
     .indicator-circle {
@@ -3903,6 +4087,10 @@ body {
         height: 250px;
     }
     
+    .interface-video-placeholder {
+        height: auto;
+    }
+    
     .indicator-circle {
         width: 30px;
         height: 30px;
@@ -3935,6 +4123,28 @@ body {
     .explanation-2::after,
     .explanation-2::before {
         display: none;
+    }
+    
+    /* Consistency card responsive styles */
+    .consistency-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .consistency-image {
+        max-width: 100%;
+    }
+    
+    .consistency-text {
+        max-width: 100%;
+    }
+    
+    .card-header {
+        padding: 30px 20px;
+    }
+    
+    .card-content {
+        padding: 30px 20px;
     }
     
 
@@ -4008,6 +4218,30 @@ body {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.prediction-list {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin: 20px auto 0;
+    text-align: center;
+    max-width: 800px;
+    list-style: none;
+    padding: 0;
+}
+
+.prediction-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 0;
+}
+
+.prediction-list li:before {
+    content: '•';
+    color: #E60021;
+    font-weight: bold;
+    margin-right: 8px;
 }
 
 .prediction-description h4 {

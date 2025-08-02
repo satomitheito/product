@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize expandable images
     initExpandableImages();
+    
+    // Initialize video autoplay
+    initVideoAutoplay();
 });
 
 // Enhanced scroll animations
@@ -404,6 +407,47 @@ function initExpandableImages() {
         if (event.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// Initialize video autoplay when in view
+function initVideoAutoplay() {
+    const video = document.querySelector('.interface-video');
+    const videoPlaceholder = document.querySelector('.interface-video-placeholder');
+    
+    if (!video || !videoPlaceholder) return;
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Video is in view, play it
+                video.play().catch(error => {
+                    console.log('Video autoplay failed:', error);
+                });
+                videoPlaceholder.classList.add('playing');
+            } else {
+                // Video is out of view, pause it
+                video.pause();
+                videoPlaceholder.classList.remove('playing');
+            }
+        });
+    }, {
+        threshold: 0.5 // Video will play when 50% is visible
+    });
+    
+    observer.observe(video);
+    
+    // Add click to play/pause functionality
+    videoPlaceholder.addEventListener('click', function() {
+        if (video.paused) {
+            video.play().catch(error => {
+                console.log('Video play failed:', error);
+            });
+            videoPlaceholder.classList.add('playing');
+        } else {
+            video.pause();
+            videoPlaceholder.classList.remove('playing');
         }
     });
 }
