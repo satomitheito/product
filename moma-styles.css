@@ -793,6 +793,61 @@ body {
     text-align: center;
 }
 
+/* Current Features Section */
+.current-features {
+    margin: 1rem 0 2rem 0;
+    padding: 1rem 0;
+}
+
+
+
+.features-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.feature-screenshot {
+    text-align: center;
+}
+
+.feature-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.feature-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-caption {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 1rem;
+    line-height: 1.5;
+    font-style: italic;
+}
+
 /* Placeholder Box Styling */
 .placeholder-box {
     background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
@@ -837,10 +892,10 @@ body {
     margin-bottom: 20px;
 }
 
-.dashboard-placeholder {
-    min-height: 300px;
-    margin-bottom: 15px;
-}
+    .dashboard-placeholder {
+        min-height: 300px;
+        margin-bottom: 15px;
+    }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -922,6 +977,16 @@ body {
     .intro-text:first-child {
         font-size: 24px;
         margin-bottom: 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .features-intro {
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
     
     .spectrum-container {
@@ -1075,6 +1140,19 @@ body {
     
     .dashboard-placeholder {
         height: 200px;
+    }
+    
+    .features-grid {
+        gap: 1.5rem;
+    }
+    
+    .features-intro {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-image {
+        max-width: 350px;
     }
     
     .intro-text {
