@@ -282,10 +282,19 @@ body {
     align-items: start;
 }
 
+.works-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0;
+    margin-top: -18px;
+}
+
 .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 0;
     text-align: left;
     color: #4A79BB;
     background: none;
@@ -306,6 +315,7 @@ body {
     margin-bottom: 0;
     line-height: 1.6;
     font-weight: 400;
+    margin-top: 0;
 }
 
 .works-list {
